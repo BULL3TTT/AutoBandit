@@ -273,12 +273,12 @@ EOF
 }
 
 saveB(){
-for i in $(seq 1 24);do
+for i in $(seq 1 25);do
 echo -e "Contraseña para Bandit$i: $(cat B$i)" 2> /dev/null
 done >> PASS
 }
 deleteB(){
-for i in $(seq 1 24);do
+for i in $(seq 1 25);do
 rm B$i
 done
 }
