@@ -26,7 +26,7 @@ EOF
 cone2(){
 echo -e
 sshpass -f B2 ssh bandit2@bandit.labs.overthewire.org -p 2220 <<'EOF' > B3 
-cat "spaces in this filename"
+cat -- --spaces\ in\ this\ filename--
 EOF
 }
 
@@ -271,12 +271,6 @@ sshpass -f B24 ssh bandit24@bandit.labs.overthewire.org -p 2220 << EOF > B25
 seq -f %04g 10000 | xargs printf "$password %s\n" | nc localhost 30002 | grep bandit25 | tail -1 | awk {'print \$7'}
 EOF
 }
-
-
-#Conexion ssh Bandit25
-#sshpass -f B25 ssh bandit25@bandit.labs.overthewire.org -p 2220 'ver=$(ls) && cat $ver' > rsa26 
-#chmod 700 rsa26
-#ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i rsa26 bandit26@bandit.labs.overthewire.org -p 2220
 
 saveB(){
 for i in $(seq 1 24);do
